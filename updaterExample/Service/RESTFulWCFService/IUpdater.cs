@@ -14,20 +14,11 @@ namespace RESTFulWCFService
     public interface IUpdater
     {
         [OperationContract]
-        String getHelloString(RequestMessage request);//(string a);//
-        [OperationContract]
-        RequestMessage Hello();
-        [OperationContract]
-        [WebGet]
-        int DoWork();
-        [OperationContract]
         [WebGet]//
         byte[] DownloadFile(string url);
         [OperationContract]
         [WebGet]// 
         Dictionary<string, string> GetHeshes();
-        [OperationContract]
-        string[] GetHeshes2();
     }
     [DataContract]
     public class RequestMessage

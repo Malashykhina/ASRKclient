@@ -14,19 +14,6 @@ namespace RESTFulWCFService
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Updater" in code, svc and config file together.
     public class Updater : IUpdater
     {
-        public string[] GetHeshes2()
-        {
-            return new string[] { "34","hello"};
-        }
-        public String getHelloString(RequestMessage request)
-        {//(string a) { //(RequestMessage request){//(string a) {   
-            return "456" + request.param1 + request.param3;// +a;// +request.param1 + request.param3;
-        }
-        public RequestMessage Hello()
-        {
-            return new RequestMessage() { param1 = "hi", param3 = "there" };
-        }
-
         Dictionary<string, string> files;
         public int DoWork()
         {
@@ -34,32 +21,15 @@ namespace RESTFulWCFService
         }
         public byte[] DownloadFile(string url)
         {
-            //var a = File.ReadAllBytes(@"D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\client\barcodes.s3db");
-            //var a = File.ReadAllBytes(@"D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\client\SQLite.Interop.066.DLL");
-            ////var filename = @"D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\client\barcodes.s3db";
-
             var a = File.ReadAllBytes(url);
-            ////var a = File.ReadAllBytes(filename);
-            ////var b = File.GetAttributes(filename);
             return a;
-            //WebClient myWebClient = new WebClient();
-            //return myWebClient.DownloadData(url);
-
             //WebClient myWebClient = new WebClient();
             //return myWebClient.DownloadData(@"D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\client\SQLite.Interop.066.DLL");
         }
-        //public FileStream Download()
-        //{
-        //    string fileName=@"D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\client\barcodes.s3db";
-        //    var a = File.ReadAllBytes(fileName);
-        //    //var a = File.ReadAllBytes(@"D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\client\SQLite.Interop.066.DLL");
-        //    FileStream fileStream = new FileStream(fileName, FileMode.Create);
-        //    return fileStream;//a
-        //}
 
         public Dictionary<string, string> GetHeshes()
         {
-            var url = ConfigurationManager.AppSettings["DownloadPath"].ToString();// @"D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\client\";//
+            var url = ConfigurationManager.AppSettings["DownloadPath"].ToString();
             return GetHeshes(url);
         }
        

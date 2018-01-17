@@ -25,3 +25,12 @@ D:\Motorolla\різне\WinMobProgects\service\RESTFulWCFService\RESTFulWCFServi
 D:\Motorolla\різне\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
 D:\Motorolla\різне\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
 D:\Motorolla\різне\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\Motorolla\ASRKclient\updaterExample\Service\RESTFulWCFService\bin\Web.config
+D:\Motorolla\ASRKclient\updaterExample\Service\RESTFulWCFService\bin\Web.Debug.config
+D:\Motorolla\ASRKclient\updaterExample\Service\RESTFulWCFService\bin\Web.Release.config
+D:\Motorolla\ASRKclient\updaterExample\Service\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\Motorolla\ASRKclient\updaterExample\Service\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\Motorolla\ASRKclient\updaterExample\Service\RESTFulWCFService\bin\Oracle.DataAccess.dll
+D:\Motorolla\ASRKclient\updaterExample\Service\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+D:\Motorolla\ASRKclient\updaterExample\Service\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\Motorolla\ASRKclient\updaterExample\Service\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
