@@ -1,0 +1,16 @@
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService\RESTFulWCFService\bin\Oracle.DataAccess.dll
+D:\Win Phone PC\RESTFulWCFService_16_08\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\Win Phone PC\RESTFulWCFService_16_08\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\Win Phone PC\RESTFulWCFService_16_08\RESTFulWCFService\bin\Oracle.DataAccess.dll
+D:\Win Phone PC\RESTFulWCFService_16_08\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+D:\Win Phone PC\RESTFulWCFService_16_08\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\Win Phone PC\RESTFulWCFService_16_08\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb

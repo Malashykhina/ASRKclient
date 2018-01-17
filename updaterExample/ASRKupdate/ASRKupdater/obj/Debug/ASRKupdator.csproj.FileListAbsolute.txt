@@ -1,0 +1,11 @@
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\obj\Debug\ResolveAssemblyReference.cache
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\obj\Debug\ASRKupdator.Form1.resources
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\obj\Debug\ASRKupdator.Properties.Resources.resources
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\obj\Debug\ASRKupdator.csproj.GenerateResource.Cache
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\bin\Debug\ASRKupdator.exe
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\bin\Debug\ASRKupdator.pdb
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\obj\Debug\ASRKupdator.exe
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\obj\Debug\ASRKupdator.pdb
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\bin\Debug\NETCFv35.Messages.EN.cab
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\bin\Debug\NETCFv35.Messages.EN.wm.cab
+D:\WinMobProgects\UPDATOR\ASRKupdator\ASRKupdator\obj\Debug\ASRKupdator.Settings.resources

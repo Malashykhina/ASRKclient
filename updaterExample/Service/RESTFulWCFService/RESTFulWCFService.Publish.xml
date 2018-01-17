@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="http://10.49.170.56:61090/" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="NorthwindServices" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Web.Debug.config" publishTime="06/14/2013 11:14:49" />
+    <file relUrl="bin/RESTFulWCFService.pdb" publishTime="12/15/2017 15:59:47" />
+    <file relUrl="bin/RESTFulWCFService.dll" publishTime="12/15/2017 15:59:47" />
+    <file relUrl="Barcode.svc" publishTime="08/16/2017 13:47:17" />
+    <file relUrl="Web.config" publishTime="12/15/2017 16:00:15" />
+    <file relUrl="Updater.svc" publishTime="11/20/2017 14:28:56" />
+    <file relUrl="Products.xml" publishTime="08/15/2017 12:59:17" />
+    <file relUrl="bin/Oracle.DataAccess.dll" publishTime="09/26/2015 12:04:44" />
+    <file relUrl="bin/Web.config" publishTime="12/15/2017 16:00:15" />
+    <file relUrl="bin/Web.Release.config" publishTime="06/14/2013 11:14:49" />
+  </publishProfile>
+</publishData>

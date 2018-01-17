@@ -1,0 +1,19 @@
+ASRKclient написаний на visualStudio2008 Compact framework.
+
+В Compact framework WCF не передбачено, тому для роботи з SOAP сервісом  для нового проекту в Compact framework треба буде вручну додати бібліокети System.ServiceModel і System.Runtime.Serialization і згенерувати 2 класи 
+(див. папку "INSTALL" та інструкцію https://blogs.msdn.microsoft.com/robcamer/2009/12/21/wcf-in-net-compact-framework-3-5/). 
+З консолі(Win-> cmd) виконати наступні команди
+
+cd D:\WinMobProgects\INSTALL(тут шлях до папочки "INSTALL")
+D:
+NetCFSvcUtil.exe /out:AsrkService http://10.255.102.149:8080/motorolla/login.wsdl
+
+В результаті буде згенеровано 2 файли:
+AsrkService.cs і
+CFClientBase.cs
+
+Ці класи потрібно буде перегенеровувати кожен раз коли змінюється сігнатура методів на сервісі http://10.255.102.149:8080/motorolla/login.wsdl (можна скачати за посиланням https://gitlab.com/Alexova/motorolla-service).
+
+Перед початком роботи вам може знадобитись встановити "Центр устройств Windows Mobile".
+Якщо при розгортання проекту на телефоні не будуть відображатись помилки, то треба буде встановити ще
+NETCFv35PowerToys.msi, який теж лежить в папці "INSTALL"

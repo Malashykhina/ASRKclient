@@ -1,0 +1,12 @@
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\obj\Debug\ResolveAssemblyReference.cache
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\obj\Debug\MotorolaSDKTest.Form1.resources
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\obj\Debug\MotorolaSDKTest.Properties.Resources.resources
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\obj\Debug\MotorolaSDKTest.csproj.GenerateResource.Cache
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\bin\Debug\MotorolaSDKTest.exe
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\bin\Debug\MotorolaSDKTest.pdb
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\bin\Debug\Symbol.Barcode.dll
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\bin\Debug\Symbol.dll
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\bin\Debug\Symbol.xml
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\bin\Debug\Symbol.Barcode.xml
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\obj\Debug\MotorolaSDKTest.exe
+D:\000\TestSymbolScaner\MotorolaSDKTest\MotorolaSDKTest\obj\Debug\MotorolaSDKTest.pdb

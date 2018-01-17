@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<configuration>
+	<appSettings>
+    <add key="Index" value="03906" />
+    <add key="Login" value="5555" />
+    <add key="Password" value="5555" />
+    <add key="ServiceUrl" value="http://10.255.102.149:8080/motorolla/login.wsdl" />
+    <add key="TimeOut" value="10000" />
+    <add key="ServerIP" value="10.255.102.149" />
+		<add key="Port" value="8080" />
+		<add key="ServerIP2" value="10.49.170.56" />
+		<add key="Port2" value="61090" />
+		<add key="LastTransmit" value="05/12/2017 14:12:33 PM" />
+	</appSettings>
+</configuration>

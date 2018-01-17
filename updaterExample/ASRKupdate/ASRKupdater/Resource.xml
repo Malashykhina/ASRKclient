@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <add key="SourceDir" value="D:\WinMobProgects\service\RESTFulWCFService\RESTFulWCFService2\client\" />
+    <add key="Destination" value="\Program Files\client1\" />
+    <add key="Service" value="http://10.49.170.56:61090/Updator1.svc" />
+  </appSettings>
+</configuration>
