@@ -1,0 +1,517 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Symbol.Audio</name>
+    </assembly>
+    <members>
+        <member name="T:Symbol.Audio.Controller">
+            <summary>
+            Audio Controller class provides access to controllable audio features.
+            </summary>
+            <remarks>
+            The Audio Controller class is the common base class for derived classes such as 
+            <see cref="T:Symbol.Audio.SimulatedAudio"/> and <see cref="T:Symbol.Audio.StandardAudio"/>. These
+            derived classes should be used to construct Audio objects.
+            </remarks>
+        </member>
+        <member name="M:Symbol.Audio.Controller.#ctor(Symbol.Generic.Device)">
+            <summary>
+            Controller class constructor with settable device object.
+            </summary>
+            <param name="Device">A device object that contains information about
+            which audio device to control.</param>
+        </member>
+        <member name="M:Symbol.Audio.Controller.Finalize">
+            <summary>
+            Allows a Controller to attempt to free resources and perform other cleanup 
+            operations before it is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:Symbol.Audio.Controller.Dispose">
+            <summary>
+            Frees up all resources used by the Controller, including any objects it has
+            created. It is strongly recommended that this method be called when the 
+            Controller is no longer needed by the application.
+            </summary>
+        </member>
+        <member name="M:Symbol.Audio.Controller.GetNextStatus">
+            <summary>
+            Gets the next AudioStatus object from the audio status event queue.
+            </summary>
+            <remarks>
+            The GetNextStatus method is most commonly called by methods that have been
+            invoked via the ChangeNotify event. This method provides access to the
+            AudioStatus object that contains information about the audio event that 
+            has occured.
+            </remarks>
+            <returns>A <see cref="T:Symbol.Audio.AudioStatus"/> object with audio event
+            information.</returns>
+        </member>
+        <member name="M:Symbol.Audio.Controller.PlayWaveFile(System.String)">
+            <summary>
+             Play a .wav file.
+            </summary>
+            <param name="WaveFilename">A string that contains the absolute path and name of
+            the .wav file.</param>
+        </member>
+        <member name="M:Symbol.Audio.Controller.PlayAudio(System.Int32,System.Int32,System.String)">
+            <summary>
+            Play tone on the beeper if present or the given .wav file.
+            </summary>
+            <param name="Duration">Beep duration (in milliseconds).</param>
+            <param name="Frequency">Frequency in Hertz</param>
+            <param name="WaveFileName">The name of the .wav file including its absolute
+            path.</param>
+        </member>
+        <member name="M:Symbol.Audio.Controller.PlayAudio(System.Int32,System.Int32)">
+            <summary>
+            Play tone on the beeper if it is present.
+            </summary>
+            <param name="Duration">Beep duration (in milliseconds).</param>
+            <param name="Frequency">Frequency in Hertz</param>
+        </member>
+        <member name="M:Symbol.Audio.Controller.OnChangeNotify(System.EventArgs)">
+            <summary>
+            Internal method called by MessageWindow class to notify UI thread of read. 
+            </summary>
+            <param name="e">A System.EventArgs object</param>
+        </member>
+        <member name="P:Symbol.Audio.Controller.Title">
+            <summary>
+            Returns a friendly name for the class.
+            </summary>
+            <value>
+            A string that contains "AudioController".
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.Controller.Text">
+            <summary>
+            Returns a friendly name for the class.
+            </summary>
+            <value>
+            A string that contains "AudioController".
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.Controller.BeeperVolumeLevels">
+            <summary>
+            Returns the number of BeeperVolumeLevels for the audio hardware.
+            </summary>
+            <remarks>
+            The application can set the level between 0 and the maximum number of
+            supported levels, minus 1 for <see cref="P:Symbol.Audio.Controller.BeeperVolume"/>.
+            <para>Note: Not all Symbol mobile devices provide a beeper.</para>
+            </remarks>
+            <value>
+            An Integer value that contains the number of volume levels for the audio hardware.
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.Controller.BeeperVolume">
+            <summary>
+            Controls the volume of sounds played through the beeper.
+            </summary>
+            <remarks>
+            For those products that support both a speaker and a beeper, or only a beeper,
+            the beeper volume controls the volume of the beeper. The application can set the level between 0
+            and the maximum number of supported beeper volume levels less one. 
+            Any values outside this range will result in 
+            Symbol.Exception.InvalidUsageException("Negative values are not allowed...") being thrown.
+            </remarks>
+            <value>
+            An Integer that defines the volume level. 
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.Controller.EarSaveDelay">
+            <summary>
+            Controls the time delay between playing sounds at the normal sound levels
+            and special higher settings.
+            </summary>
+            <remarks>
+            For those products that support only a speaker (as opposed to a speaker and
+            a beeper), a special speaker volume setting is provided specifically for the
+            purpose of playing back a very audible Decode Beep through the speaker. The
+            value of EarSaveDelay is that amount of time after a sound is played at the
+            normal volume setting, until the special Higher volume settings are allowed.
+            Only positive integer values are accepted. Any negative/invalid values provided will result 
+            in Symbol.Exception.InvalidUsageException("Negative values are not allowed...") being thrown.
+            </remarks>
+            <value>
+            An Integer that specified in seconds the time between playing sounds at the 
+            normal level and the special higher settings.
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.Controller.Version">
+            <summary>
+            Provides access to version information.
+            </summary>
+            <value> A <see cref="T:Symbol.Audio.Version"/> object.</value>
+        </member>
+        <member name="E:Symbol.Audio.Controller.ChangeNotify">
+            <summary>
+            Attach to this notification event to be called back when a audio event occurs.
+            </summary>
+            <value>
+            A <see cref="T:System.EventHandler"/> delegate of the method that will be invoked
+            when a audio event occurs.
+            </value>
+        </member>
+        <member name="T:Symbol.Audio.AudioType">
+            <summary>
+            Types of audio devices.
+            </summary>
+        </member>
+        <member name="F:Symbol.Audio.AudioType.StandardAudio">
+            <summary>
+            A standard audio device. Commonly found in most Symbol mobile devices.
+            </summary>
+        </member>
+        <member name="F:Symbol.Audio.AudioType.SimulatedAudio">
+            <summary>
+            A simulated audio device. Commonly used on stock emulators that do not provide
+            Symbol specific audio APIs.
+            </summary>
+        </member>
+        <member name="T:Symbol.Audio.Device">
+            <summary>
+            The Symbol.Audio.Device class provides information about all the
+            available audio devices in the system.
+            </summary>
+            <remarks>
+            The Symbol.Audio.Device class provides an excellent starting point for applications
+            that wish to gain more information about the available audio devices. The
+            AvailableDevices property provides a static Device array with each entry mapping to
+            available audio hardware. Each entry can be used to contruct an object based on the 
+            audio type information. <para>Ex: An AudioType.StandardAudio type device object is used
+            to construct an Audio.StandardAudio object.</para>
+            </remarks>
+        </member>
+        <member name="M:Symbol.Audio.Device.#ctor(System.String,System.String,Symbol.Audio.AudioType)">
+            <summary>
+            Device class constructor with settable device name, friendly name, and AudioType.
+            Device constructors are not normally called by the user. Selecting a Device reference by using Device.AvailableDevices is preferred instead.
+            </summary>
+            <remarks>
+            An Audio.Device object will be contructed with the given Device Name and Friendly
+            Name. The AudioType specifies the type of hardware is targeted.
+            </remarks>
+            <param name="DeviceName">The name of the device (should be either "AUDIOAPI32" 
+            for standard audio or "SIMULATE" for simulated audio).</param>
+            <param name="FriendlyName">A friendly name for the device. Can be any string.</param>
+            <param name="AudioType">An AudioType value that specifies the type of audio 
+            hardware.</param>
+        </member>
+        <member name="P:Symbol.Audio.Device.AudioType">
+            <summary>
+            Returns the type of audio device. 
+            </summary>
+            <remarks>
+            This information is used by applications to determine which Audio object can
+            be contructed.
+            </remarks>
+            <value>
+            An AudioType value that specifies what type of device is being targeted.
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.Device.AvailableDevices">
+            <summary>
+            The AvailableDevices property can be used to obtain a list of all available 
+            hardware for use with the audio classes.
+            </summary>
+            <remarks>
+            The AvailableDevices property provides a static Device array with each entry
+            mapping to available audio hardware. Each entry can be used to contruct an object
+            based on the audio type information. <para>Ex: An AudioType.StandardAudio type
+            device object is used to construct an Audio.StandardAudio object.</para>
+            </remarks>
+            <value>
+            A <see cref="T:Symbol.Audio.Device"/> array that represents all available audio hardware.
+            </value>
+        </member>
+        <member name="T:Symbol.Audio.ChangeType">
+            <summary>
+            Defines the events that can be fired by the Audio classes.
+            </summary>
+        </member>
+        <member name="F:Symbol.Audio.ChangeType.BeeperVolume">
+            <summary>
+            Audio Beeper volume has changed.
+            </summary>
+        </member>
+        <member name="F:Symbol.Audio.ChangeType.EarSaveDelay">
+            <summary>
+            Audio ear save delay has changed.
+            </summary>
+        </member>
+        <member name="T:Symbol.Audio.EventTypes">
+            <summary>
+            Defines the types of events for the Audio classes.
+            </summary>
+        </member>
+        <member name="F:Symbol.Audio.EventTypes.STATE_CHANGE">
+            <summary>
+            The state of the Audio driver has changed.
+            </summary>
+        </member>
+        <member name="F:Symbol.Audio.EventTypes.ERROR">
+            <summary>
+            An error occured during event processing.
+            </summary>
+        </member>
+        <member name="T:Symbol.Audio.AudioStatus">
+            <summary>
+            The AudioStatus class provides access to notification information.
+            </summary>
+            <remarks>
+            The AudioStatus class is normally obtained from the StandardAudio.GetNextStatus
+            method. The GetNextStatus() method is usually called when a ChangeNotify event
+            has been fired and your event processing method (EventHandler) has been invoked.
+            During your event processing the AudioStatus object is obtained so that
+            information about the status change can be retrieved.
+            <seealso cref="M:Symbol.Audio.StandardAudio.GetNextStatus"/> <seealso cref="E:Symbol.Audio.Controller.ChangeNotify"/>
+            </remarks>
+        </member>
+        <member name="M:Symbol.Audio.AudioStatus.#ctor(Symbol.Audio.EventTypes,Symbol.Audio.ChangeType)">
+            <summary>
+            The AudioStatus constructor is not normally called by the developer.
+            </summary>
+            <param name="et">An EventTypes enumerated type that defines the type of 
+            event that has occurred.</param>
+            <param name="ct">A ChangeType enumerated type that defines what changed in the
+            audio driver.</param>
+        </member>
+        <member name="P:Symbol.Audio.AudioStatus.Type">
+            <summary>
+            Retrieves the Audio event type.
+            </summary>
+            <value>
+            An EventTypes member that defines the type of event that has occured.
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.AudioStatus.Change">
+            <summary>
+            Retrieves the Audio driver change.
+            </summary>
+            <value>
+            A ChangeType member that defines what changed in the audio driver.
+            </value>
+        </member>
+        <member name="T:Symbol.Audio.SimulatedAudio">
+            <summary>
+            The SimulatedAudio class can be used to program Symbol audio drivers 
+            on standard emulators provided by Microsoft. 
+            </summary>
+            <remarks>
+            The SimulatedAudio class does not call the underlying Symbol Audio 'C' API. Instead
+            calls to Win32 audio functions are made. These calls mimic the functionality of the
+            Symbol specific functionality. Audio settings for simulation are obtained and set in
+            registry (HKLM\Software\Symbol\Audio\Settings).
+            </remarks>
+        </member>
+        <member name="M:Symbol.Audio.SimulatedAudio.#ctor(Symbol.Audio.Device)">
+            <summary>
+            SimulatedAudio constructor with settable Audio.Device.
+            </summary>
+            <remarks>
+            If the Audio.Device object passed to this contructor does not represent an
+            AudioType.SimulatedAudio device, then an Symbol.Exceptions.InvalidDataTypeException
+            will be thrown.
+            </remarks>
+            <param name="Device">An Audio.Device object that targets a SimulatedAudio device.
+            </param>
+        </member>
+        <member name="M:Symbol.Audio.SimulatedAudio.GetNextStatus">
+            <summary>
+            Gets the next AudioStatus object from the audio status event queue.
+            </summary>
+            <remarks>
+            The GetNextStatus method is most commonly called by methods that have been
+            invoked via the ChangeNotify event. This method provides access to the AudioStatus
+            object that contains information about the audio event that has occured.
+            </remarks>
+            <returns>A <see cref="T:Symbol.Audio.AudioStatus"/> object with audio event
+            information.</returns>
+        </member>
+        <member name="P:Symbol.Audio.SimulatedAudio.BeeperVolumeLevels">
+            <summary>
+            Returns the number of BeeperVolumeLevels for the audio hardware.
+            </summary>
+            <remarks>
+            For SimulatedAudio the value is retrieved and set in the registry.
+            </remarks>
+            <value>
+            An Integer value that contains the number of volume levels for the audio hardware.
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.SimulatedAudio.BeeperVolume">
+            <summary>
+            Controls the volume of sounds played through the beeper.
+            </summary>
+            <remarks>
+            For SimulatedAudio the value is retrieved and set in the registry. No actual
+            change in volume takes place.
+            The application can set the level between 0 and the maximum number of supported beeper volume 
+            levels less one. Any values outside this range will result in 
+            Symbol.Exception.InvalidUsageException("Negative values are not allowed...") being thrown.
+            </remarks>
+            <value>
+            An Integer that defines the volume level. 
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.SimulatedAudio.EarSaveDelay">
+            <summary>
+            Controls the time delay between playing sounds at the normal sound levels
+            and special higher settings.
+            </summary>
+            <remarks>
+            For SimulatedAudio the value is retrieved and set in the registry. No actual
+            change in EarSaveDelay takes place.
+            Only positive integer values are accepted. Any negative/invalid values provided will result 
+            in Symbol.Exception.InvalidUsageException("Negative values are not allowed...") being thrown.
+            </remarks>
+            <value>
+            An Integer that specified in seconds the time between playing sounds at the 
+            normal level and the special higher settings.
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.SimulatedAudio.Version">
+            <summary>
+            Provides access to version information.
+            </summary>
+            <value> A <see cref="T:Symbol.Audio.Version"/> object.</value>
+        </member>
+        <member name="T:Symbol.Audio.StandardAudio">
+            <summary>
+            The StandardAudio class provides access to controllable audio features on Symbol
+            mobile devices.
+            </summary>
+            <remarks>
+            The StandardAudio class is the primary class for Audio class library and should be
+            used to access and control the audio functionality on Symbol mobile devices. Unlike
+            the SimulatedAudio device, calls the underlying audio drivers will be made when 
+            methods and properties are accessed within this class.
+            </remarks>
+        </member>
+        <member name="M:Symbol.Audio.StandardAudio.#ctor(Symbol.Audio.Device)">
+            <summary>
+            StandardAudio constructor with settable Audio.Device.
+            </summary>
+            <remarks>
+            If the Audio.Device object passed to this contructor does not represent an
+            AudioType.StandardAudio device, then a Symbol.Exceptions.InvalidDataTypeException
+            will be thrown.
+            </remarks>
+            <param name="Device">An Audio.Device object that targets a StandardAudio device.
+            </param>
+        </member>
+        <member name="M:Symbol.Audio.StandardAudio.GetNextStatus">
+            <summary>
+            Gets the next AudioStatus object from the audio status event queue.
+            </summary>
+            <remarks>
+            The GetNextStatus method is most commonly called by methods that have been
+            invoked via the ChangeNotify event. This method provides access to the AudioStatus
+            object that contains information about the audio event that has occured.
+            </remarks>
+            <returns>A <see cref="T:Symbol.Audio.AudioStatus"/> object with audio event
+            information.</returns>
+        </member>
+        <member name="M:Symbol.Audio.StandardAudio.PlayAudio(System.Int32,System.Int32,System.String)">
+            <summary>
+            On products that support a real beeper, the	frequency and duration generate the 
+            sound. On products that do not support a real beeper, the wav file is played 
+            through the speaker at the current beeper volume. On products that support both 
+            a speaker and real beeper, the wavfile is played through the speaker, and the 
+            sound with a specified frequency and duration is generated through the real beeper.
+            </summary>
+            <param name="Duration">Beep duration (in milliseconds).</param>
+            <param name="Frequency">Frequency in Hertz</param>
+            <param name="WaveFileName">The name of the .wav file including its absolute
+            path.</param>
+        </member>
+        <member name="M:Symbol.Audio.StandardAudio.PlayAudio(System.Int32,System.Int32)">
+            <summary>
+            Play tone on the beeper if it is present.
+            </summary>
+            <param name="Duration">Beep duration (in milliseconds).</param>
+            <param name="Frequency">Frequency in Hertz</param>
+        </member>
+        <member name="P:Symbol.Audio.StandardAudio.BeeperVolumeLevels">
+            <summary>
+            Returns the number of BeeperVolumeLevels for the audio hardware.
+            </summary>
+            <remarks>
+            The application can set the level between 0 and the maximum number of
+            supported levels, minus 1 for <see cref="P:Symbol.Audio.StandardAudio.BeeperVolume"/>.
+            <para>Note: Not all Symbol mobile devices provide a beeper.</para>
+            </remarks>
+            <value>
+            An Integer value that contains the number of volume levels for the audio hardware.
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.StandardAudio.BeeperVolume">
+            <summary>
+            Controls the volume of sounds played through the beeper.
+            </summary>
+            <remarks>
+            For those products that support both a speaker and a beeper, or only a beeper,
+            the beeper volume controls the volume of the beeper. The application can set the level between 0
+            and the maximum number of supported beeper volume levels less one. 
+            Any values outside this range will result in 
+            Symbol.Exception.InvalidUsageException("Negative values are not allowed...") being thrown.
+            </remarks>
+            <value>
+            An Integer that defines the volume level. 
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.StandardAudio.EarSaveDelay">
+            <summary>
+            Controls the time delay between playing sounds at the normal sound levels
+            and special higher settings.
+            </summary>
+            <remarks>
+            For those products that support only a speaker (as opposed to a speaker and
+            a beeper), a special speaker volume setting is provided specifically for the
+            purpose of playing back a very audible Decode Beep through the speaker. The
+            value of EarSaveDelay is that amount of time after a sound is played at the
+            normal volume setting, until the special Higher volume settings are allowed.
+            Only positive integer values are accepted. Any negative/invalid values provided will result 
+            in Symbol.Exception.InvalidUsageException("Negative values are not allowed...") being thrown.
+            </remarks>
+            <value>
+            An Integer that specified in seconds the time between playing sounds at the 
+            normal level and the special higher settings.
+            </value>
+        </member>
+        <member name="P:Symbol.Audio.StandardAudio.Version">
+            <summary>
+            Provides access to version information.
+            </summary>
+            <value> A <see cref="T:Symbol.Audio.Version"/> object.</value>
+        </member>
+        <member name="T:Symbol.Audio.Version">
+            <summary>
+            Symbol.Audio version class.
+            </summary>
+        </member>
+        <member name="M:Symbol.Audio.Version.#ctor(Symbol.Audio.Device)">
+            <summary>
+            Version class constructor.
+            </summary>
+            <param name="Device">The Audio.Device object to obtain version information from.</param>
+        </member>
+        <member name="P:Symbol.Audio.Version.CAPIVersion">
+            <summary>
+            Version of the Symbol Audio native API.
+            </summary>
+        </member>
+        <member name="P:Symbol.Audio.Version.NotifyAPIVersion">
+            <summary>
+            The Notify C API version. Returns 0 on some devices.
+            </summary>
+        </member>
+        <member name="P:Symbol.Audio.Version.AssemblyVersion">
+            <summary>
+            Version of the Assembly.
+            </summary>
+        </member>
+    </members>
+</doc>
